@@ -6,6 +6,7 @@ import { Header as ListHeader } from "./components/List/Header";
 import { Button } from "./components/Button";
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
+import { Item } from "./components/List/Item";
 
 export function App(){
   return(
@@ -23,6 +24,10 @@ export function App(){
 
         <div className={styles.taskList}>
           <ListHeader/>
+        </div>
+
+        <div>
+          <Item/>
         </div>
       </section>
     </main>
