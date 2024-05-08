@@ -1,8 +1,14 @@
 import { Trash, Check } from '@phosphor-icons/react'
 
 import styles from './Item.module.css'
+import { ITask } from '../../App'
 
-export function Item(){
+interface Props {
+    data: ITask
+
+}
+
+export function Item({data}: Props){
     return(
         <div className={styles.container}>
             <div>

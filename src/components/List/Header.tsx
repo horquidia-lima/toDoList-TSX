@@ -1,17 +1,26 @@
 import styles from './Header.module.css'
 
-export function Header(){
+interface Props {
+    tasksCounter: number
+    checkedTasksCounter: number
+}
+
+export function Header({tasksCounter, checkedTasksCounter}: Props){
     return(
         <header className={styles.container}>
             <aside>
                 <p>Tarefas criadas</p>
-                <span>0</span>
+                <span>{tasksCounter}</span>
             </aside>
 
             <aside>
                 <p>Concluídas</p>
                 <span>
-                    2 de 5
+                    {
+                        tasksCounter === 0
+                         ? tasksCounter 
+                         : `${checkedTasksCounter} de ${tasksCounter}`
+                    }
                 </span>
             </aside>
         </header>
