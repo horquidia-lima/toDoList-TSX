@@ -44,6 +44,16 @@ export function App(){
     setInputValue('')
   }
 
+  function handleRemoveTask(id:number){
+    const filteredTasks = tasks.filter((task) => task.id !== id)
+
+    if(!confirm("Are you sure you want to remove")){
+      return
+    }
+
+    setTasks(filteredTasks)
+  }
+
   return(
     <main>
       <Header/>
@@ -75,6 +85,7 @@ export function App(){
                   <Item
                     data={task}
                     key={task.id}
+                    removeTask={handleRemoveTask}
                   />
                 ))}
             </div>
